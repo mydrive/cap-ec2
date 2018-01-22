@@ -46,7 +46,7 @@ module CapEC2
         magenta(instance.availability_zone),
         yellow(instance.tags[roles_tag]),
         yellow(instance.tags[stages_tag]),
-        yellow(instance.tags[deployer_tag])
+        yellow(instance.tags[deployer_tag] || '')
       ]
     end
 

@@ -51,7 +51,7 @@ module CapEC2
     end
 
     def deployer
-      Capistrano::Configuration.env.fetch(:deployer).to_s
+      fetch(:deployer).to_s rescue ''
     end
 
     def application

@@ -45,7 +45,7 @@ module CapEC2
         bold(blue(CapEC2::Utils.contact_point(instance))),
         magenta(instance.availability_zone),
         yellow(instance.tags[roles_tag]),
-        yellow(instance.tags[stages_tag])
+        yellow(instance.tags[stages_tag]),
         yellow(instance.tags[deployer_tag])
       ]
     end

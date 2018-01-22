@@ -52,6 +52,9 @@ module CapEC2
 
     def deployer
       fetch(:deployer).to_s rescue ''
+      puts '------>'
+      puts fetch(:deployer)
+      puts '<------'
     end
 
     def application

@@ -1,12 +1,12 @@
 module CapEC2
   class StatusTable
     include CapEC2::Utils
-    
+
     def initialize(instances)
       @instances = instances
       output
     end
-    
+
     def header_row
       [
         bold("Num"),
@@ -16,10 +16,11 @@ module CapEC2
         bold("DNS"),
         bold("Zone"),
         bold("Roles"),
-        bold("Stages")
+        bold("Stages"),
+        bold("Deployer")
       ]
     end
-    
+
     def output
       table = Terminal::Table.new(
         :style => {
@@ -44,7 +45,8 @@ module CapEC2
         bold(blue(CapEC2::Utils.contact_point(instance))),
         magenta(instance.availability_zone),
         yellow(instance.tags[roles_tag]),
-        yellow(instance.tags[stages_tag])
+        yellow(instance.tags[stages_tag]),
+        yellow(instance.tags[deployer_tag] || '')
       ]
     end
 
@@ -62,4 +64,3 @@ module CapEC2
 
   end
 end
-

@@ -47,6 +47,7 @@ set :ec2_config, 'config/ec2.yml'
 set :ec2_project_tag, 'Project'
 set :ec2_roles_tag, 'Roles'
 set :ec2_stages_tag, 'Stages'
+set :ec2_deployer_tag, 'Deployer'
 
 set :ec2_access_key_id, nil
 set :ec2_secret_access_key, nil
@@ -72,8 +73,8 @@ If running on EC2 the IAM instance profile credentials will be used if credentia
 
 * project_tag
 
-  Cap-EC2 will look for a tag with this name when searching for instances that belong to this project. 
-  Cap-EC2 will look for a value which matches the :application setting in your deploy.rb. 
+  Cap-EC2 will look for a tag with this name when searching for instances that belong to this project.
+  Cap-EC2 will look for a value which matches the :application setting in your deploy.rb.
   The tag name defaults to "Project" and must be set on your instances.
 
 * stages_tag

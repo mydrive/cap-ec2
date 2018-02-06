@@ -50,6 +50,10 @@ module CapEC2
       Capistrano::Configuration.env.fetch(:stage).to_s
     end
 
+    def deployer
+      fetch(:deployer, "")
+    end
+
     def application
       Capistrano::Configuration.env.fetch(:application).to_s
     end
@@ -68,6 +72,8 @@ module CapEC2
           instance_has_tag?(i, roles_tag, role) &&
             instance_has_tag?(i, stages_tag, stage) &&
             instance_has_tag?(i, project_tag, application) &&
+            (  (deployer.empty? && i.tags[deployer_tag].nil?) ||
+               (!deployer.empty? && instance_has_tag?(i, deployer_tag, deployer) )) &&
             (fetch(:ec2_filter_by_status_ok?) ? instance_status_ok?(i) : true)
         end
       end

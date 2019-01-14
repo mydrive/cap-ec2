@@ -12,7 +12,7 @@ module CapEC2
     end
 
     def ec2_connect(region=nil)
-      AWS::EC2::Client.new(
+      Aws::EC2::Client.new(
         access_key_id: fetch(:ec2_access_key_id),
         secret_access_key: fetch(:ec2_secret_access_key),
         region: region

@@ -26,6 +26,7 @@ namespace :load do
     set :ec2_project_tag, 'Project'
     set :ec2_roles_tag, 'Roles'
     set :ec2_stages_tag, 'Stages'
+    set :ec2_tag_delimiter, ","
     set :ec2_deployer_tag, 'Deployer'
 
     set :ec2_access_key_id, nil

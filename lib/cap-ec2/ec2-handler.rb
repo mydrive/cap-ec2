@@ -51,6 +51,10 @@ module CapEC2
       Capistrano::Configuration.env.fetch(:stage).to_s
     end
 
+    def deployer
+      fetch(:deployer, "")
+    end
+
     def application
       Capistrano::Configuration.env.fetch(:application).to_s
     end

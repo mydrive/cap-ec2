@@ -16,7 +16,8 @@ module CapEC2
         bold("DNS"),
         bold("Zone"),
         bold("Roles"),
-        bold("Stages")
+        bold("Stages"),
+        bold("Deployer")
       ]
     end
 

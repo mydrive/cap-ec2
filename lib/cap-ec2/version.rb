@@ -1,3 +1,3 @@
 module CapEC2
-  VERSION = '0.0.19'
+  VERSION = '1.1.2'
 end
